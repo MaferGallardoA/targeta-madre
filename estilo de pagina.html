@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas Programables - Placa Base</title>
+    <style>
+        /* Importar fuente de Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('images/placa-madre.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #f5f5f5;
+        }
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: rgba(50, 50, 50, 0.8); /* Fondo con opacidad */
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #f9f9f9;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #00695c;
+            color: #fff;
+            margin: 12px 0;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: background 0.3s, transform 0.3s;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        li:hover {
+            background: #004d40;
+            transform: scale(1.03);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fff;
+            color: #333;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .modal-content h2 {
+            color: #004d40;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 0;
+        }
+        .modal-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .close {
+            color: #333;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 1rem;
+            }
+            .modal-content {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistemas Programables - Placa Base</h1>
+        <ul>
+            <li onclick="openModal('sensor1')">Sensor 1</li>
+            <li onclick="openModal('sensor2')">Sensor 2</li>
+            <li onclick="openModal('sensor3')">Sensor 3</li>
+            <li onclick="openModal('sensor4')">Sensor 4</li>
+            <li onclick="openModal('sensor5')">Sensor 5</li>
+        </ul>
+    </div>
+
+    <!-- Modals -->
+    <div id="sensor1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sensor1')">&times;</span>
+            <h2>Ranuras de RAM</h2>
+            <p>Las placas bases constan de ranuras (slots) de memoria de acceso aleatorio, su número es de 2 a 6 ranuras en una misma placa base común. En ellas se insertan dichas memorias del tipo conveniente dependiendo de la velocidad, capacidad y fabricante requeridos según la compatibilidad de cada placa base y la CPU.</p>
+        </div>
+    </div>
+
+    <div id="sensor2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sensor2')">&times;</span>
+            <h2>Chipset</h2>
+            <p>El chipset es una serie o conjunto de circuitos electrónicos, que gestionan las transferencias de datos entre los diferentes componentes de la computadora (procesador, memoria, tarjeta gráfica, unidad de almacenamiento secundario, etcétera). Generalmente se divide en dos secciones: Puente norte (northbridge) y Puente sur (southbridge).</p>
+        </div>
+    </div>
+
+    <div id="sensor3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sensor3')">&times;</span>
+            <h2>Los puertos de la CPU</h2>
+            <p>Cuando tiene un único zócalo para el microprocesador se llama monoprocesador. Si posee dos o más zócalos, se denomina multiprocesador. Este zócalo, llamado socket de la CPU, es un receptáculo donde se ubica el microprocesador que se conecta con el resto de componentes a través del bus frontal de la placa base.</p>
+        </div>
+    </div>
+
+    <div id="sensor4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sensor4')">&times;</span>
+            <h2>Tarjeta Gráfica</h2>
+            <p>Una tarjeta gráfica o tarjeta de video es una tarjeta de expansión de la placa base de la computadora que se encarga de procesar los datos provenientes del procesador y transformarlos en información comprensible y representable en el dispositivo de salida (por ejemplo: monitor, televisor o proyector).</p>
+        </div>
+    </div>
+
+    <div id="sensor5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sensor5')">&times;</span>
+            <h2>BIOS</h2>
+            <p>Es un conjunto de hardware y software que realiza las funciones básicas de arranque y control. Identifica todos los componentes del sistema y les asigna un identificador (denominado IRQ), haciendo que todos se comuniquen.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(sensorId) {
+            document.getElementById(sensorId).style.display = "block";
+        }
+
+        function closeModal(sensorId) {
+            document.getElementById(sensorId).style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modals = document.getElementsByClassName('modal');
+            for (var i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = "none";
+                }
+            }
+        }
+
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const sensorId = urlParams.get('sensor');
+            if (sensorId) {
+                openModal('sensor' + sensorId);
+            }
+        }
+    </script>
+</body>
+</html>
